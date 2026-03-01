@@ -1,0 +1,26 @@
+services:
+  jobmanager:
+    image: flink:1.18.1-java11
+    container_name: flink-jobmanager-wordcount
+    command: jobmanager
+    ports:
+      - "8081:8081"
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+
+  taskmanager:
+    image: flink:1.18.1-java11
+    container_name: flink-taskmanager-wordcount
+    command: taskmanager
+    depends_on:
+      - jobmanager
+    volumes:
+      - ./app/data:/data
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+        taskmanager.numberOfTaskSlots: 4
+        taskmanager.memory.process.size: 1024m

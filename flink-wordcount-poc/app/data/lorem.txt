@@ -1,0 +1,15 @@
+Apache Flink is a framework and distributed processing engine for stateful computations over unbounded and bounded data streams.
+Flink has been designed to run in all common cluster environments and perform computations at in-memory speed and at any scale.
+Flink provides a streaming runtime that supports both batch processing and stream processing programs.
+One of the most important aspects of Flink is that it provides exactly-once state consistency guarantees.
+Flink integrates with all common cluster resource managers such as Hadoop YARN and Kubernetes.
+High availability is set up with Flink through ZooKeeper which makes Flink suitable for mission-critical production deployments.
+Flink is well suited to process large data sets with its ability to handle both bounded and unbounded data streams efficiently.
+The DataStream API in Flink provides primitives for many common stream transformation operations such as mapping filtering and aggregating.
+Flink supports event time processing and watermarks for handling out-of-order events in data streams.
+Window operations in Flink allow grouping events into finite sets for aggregation and analysis.
+Tumbling windows in Flink assign each element to a single non-overlapping window of fixed size.
+Sliding windows in Flink can overlap and an element can be assigned to multiple windows.
+Session windows in Flink group elements by sessions of activity separated by gaps of inactivity.
+Keyed state in Flink allows each key in a keyed stream to maintain its own state independently.
+Checkpointing in Flink provides fault tolerance by periodically saving the state of a streaming application.
